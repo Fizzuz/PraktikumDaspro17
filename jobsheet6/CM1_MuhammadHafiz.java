@@ -7,7 +7,7 @@ public class CM1_MuhammadHafiz {
         Scanner sc = new Scanner(System.in);
         
         String nama;
-        long nim;
+        String nim;
         double nilaiAkhir1, nilaiAkhir2;
         
         
@@ -15,7 +15,7 @@ public class CM1_MuhammadHafiz {
         System.out.print("Nama  : ");
         nama = sc.nextLine(); 
         System.out.print("NIM   : ");
-        nim = sc.nextInt();
+        nim = sc.nextLine();
 
         System.out.println("--- Mata Kuliah 1: Algoritma dan Pemrograman ---");
         System.out.print("Nilai UTS     : ");
@@ -37,7 +37,7 @@ public class CM1_MuhammadHafiz {
             nilaiAkhir2 = (uts2 * 0.3) + (uas2 * 0.4) + (tugas2 * 0.3);
 
             String nilaiHuruf1;
-            String status;
+            String status = "a";
             String nilaiHuruf2, status2;
 
             if(nilaiAkhir1 >=81 && nilaiAkhir1<=100 ){
@@ -77,7 +77,7 @@ public class CM1_MuhammadHafiz {
             else if(nilaiAkhir2 >= 66 && nilaiAkhir2 <=73){
                 nilaiHuruf2 = "B";
             }
-            else if(nilaiAkhir2 >= 61 && nilaiAkhir2 <=65){
+            else if(nilaiAkhir2 > 60 && nilaiAkhir2 <=65){
                 nilaiHuruf2 = "C+";
             }
             else if(nilaiAkhir2 >= 51 && nilaiAkhir2 <=60){
@@ -100,17 +100,32 @@ public class CM1_MuhammadHafiz {
             double rata_rata = (nilaiAkhir1 + nilaiAkhir2) / 2;
             String semester;
 
-            if (status2.equals("LULUS") && status2.equals("LULUS")){
+            if (status.equals("LULUS") && status2.equals("LULUS")){
                 semester = "LULUS";
-            }
-            else {
-                semester = "TIDAK LULUS";
-            }
+            
             if (rata_rata >=70){
                 semester = "LULUS";
             }
             else {
                 semester = "TIDAK LULUS";
+            }
+        }
+            else {
+                semester = "TIDAK LULUS";
+            }
+        
+            
+
+            
+            String beasiswa;
+            if (rata_rata >=85 && rata_rata <=100){
+                beasiswa = "Cumlaude, berhak beasiswa";
+            }
+            else if (rata_rata >=70){
+                beasiswa = "Baik, tidak berhak beasiswa";
+            }
+            else {
+                beasiswa = "Perlu Perbaikan, tidak berhak beasiswa";
             }
 
         System.out.println("================ HASIL PENILAIAN AKADEMIK =============");
@@ -124,6 +139,6 @@ public class CM1_MuhammadHafiz {
         System.out.println("");
         System.out.println("Rata-rata Nilai Akhir\t:" +rata_rata);
         System.out.println("Status Semester\t\t:" +semester);
+        System.out.println("Status Beasiswa\t\t:" +beasiswa);
      }
      }  
-
