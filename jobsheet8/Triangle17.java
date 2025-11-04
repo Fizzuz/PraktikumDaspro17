@@ -13,7 +13,7 @@ public class Triangle17 {
                 j++;
             }
             i++;
-            
+            System.out.println();
        }
     }
 }
